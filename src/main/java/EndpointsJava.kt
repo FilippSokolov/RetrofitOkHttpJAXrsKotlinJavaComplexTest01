@@ -1,61 +1,48 @@
-import retrofit2.Call;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import java.util.List;
+import retrofit2.Call
+import retrofit2.http.GET
+import javax.ws.rs.Path
 
 @Path("/classJava1")
-public class EndpointsJava implements InterfaceEndpointsJava, InterfaceRetrofit {
-
-    @retrofit2.http.GET("/retroinClass")
-    Call<List<TestObject>> getRetroTest(){
-        return null;
-    }
+class EndpointsJava : InterfaceEndpointsJava, InterfaceRetrofit {
+    @get:GET("/retroinClass")
+    val retroTest: Call<List<TestObject>>?
+        get() = null
 
     @Path("test")
-    @GET
-    public String getMessage0() {
-        return "Hello";
+    @javax.ws.rs.GET
+     fun getMessage0(): String {
+        return "Hello"
     }
 
-    @Override
-    public Call<List<TestObject>> getAllObjects() {
-        return null;
+    override fun getAllObjects(): Call<List<TestObject>> {
+        return null
     }
 
-    @Override
-    public Call<List<TestObject>> groupList(int groupId, String sort) {
-        return null;
+    override fun groupList(groupId: Int, sort: String?): Call<List<TestObject?>?>? {
+        return null
     }
 
-
-//    @Override
-//    public String getMessage() {
-//        return null;
+    //    @Override
+    //    public String getMessage() {
+    //        return null;
+    //    }
+    //    @Override
+    //    public String getMessage1() {
+    //        return null;
+    //    }
+//    override fun getMessage2(): String {
+//        return null
 //    }
-
-//    @Override
-//    public String getMessage1() {
-//        return null;
+//
+//    override fun getMessage3(): String {
+//        return null
 //    }
-
-    @Override
-    public String getMessage2() {
-        return null;
-    }
-
-    @Override
-    public String getMessage3() {
-        return null;
-    }
-
-    @Override
-    public String getMessage4() {
-        return null;
-    }
-
-    @Override
-    public String getMessage5() {
-        return null;
-    }
+//
+//    override fun getMessage4(): String {
+//        return null
+//    }
+//
+//    override fun getMessage5(): String {
+//        return null
+//    }
 }

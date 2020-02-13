@@ -1,28 +1,24 @@
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
-import java.util.List;
-
-
-public interface InterfaceRetrofit {
-
-    @GET("RclassJava")
-    Call<List<TestObject>> getAllObjects();
+interface InterfaceRetrofit {
+    @get:GET("RclassJava")
+    val allObjects: Call<List<TestObject?>?>?
 
     @GET("group/{id}/users")
-    Call<List<TestObject>> groupList(@Path("id") int groupId, @Query("sort") String sort);
+    fun groupList(@Path("id") groupId: Int, @Query("sort") sort: String?): Call<List<TestObject?>?>?
 
-    @GET("https://localhost:8080/")
-    String getMessage2();
+    @get:GET("https://localhost:8080/")
+    val getMessage2: String?
 
-    @GET("RclassJava/test")
-    String getMessage3();
+    @get:GET("RclassJava/test")
+    val getMessage3: String?
 
-    @GET("/classJava1/test")
-    String getMessage4();
+    @get:GET("/classJava1/test")
+    val getMessage4: String?
 
-    @GET("/")
-    String getMessage5();
+    @get:GET("/")
+    val getMessage5: String?
 }

@@ -1,28 +1,20 @@
-import okhttp3.HttpUrl;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-import javax.ws.rs.ApplicationPath;
-import java.net.MalformedURLException;
-import java.util.List;
+import okhttp3.HttpUrl
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.net.MalformedURLException
+import javax.ws.rs.ApplicationPath
 
 @ApplicationPath("/")
-public class ClientJava {
-    public List<TestObject> callEndpoint() throws MalformedURLException, Exception {
-        HttpUrl httpUrl = HttpUrl.get("https://localhost:8080/");
-
-        Retrofit retrofit = new Retrofit.Builder()
-                //.baseUrl("https://api.github.com")
-                .baseUrl("https://localhost:8080/classJava1/interfaceGetMessagePathJava")
+class ClientJava {
+    @Throws(MalformedURLException::class, Exception::class)
+    fun callEndpoint(): List<TestObject?>? {
+        val httpUrl = HttpUrl.get("https://localhost:8080/")
+        val retrofit = Retrofit.Builder() //.baseUrl("https://api.github.com")
+                .baseUrl("https://localhost:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        InterfaceRetrofit service = retrofit.create(InterfaceRetrofit.class);
-        Call<List<TestObject>> testObjects = service.getAllObjects();
-        return testObjects.execute().body();
-
+                .build()
+        val service = retrofit.create(InterfaceRetrofit::class.java)
+        val testObjects = service.allObjects
+        return testObjects!!.execute().body()
     }
-
-
 }
