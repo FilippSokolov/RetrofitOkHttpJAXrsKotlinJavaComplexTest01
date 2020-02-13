@@ -14,7 +14,7 @@ public class ClientJava {
 
         Retrofit retrofit = new Retrofit.Builder()
                 //.baseUrl("https://api.github.com")
-                .baseUrl("https://localhost:8080/")
+                .baseUrl("https://localhost:8080/classJava1/interfaceGetMessagePathJava")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

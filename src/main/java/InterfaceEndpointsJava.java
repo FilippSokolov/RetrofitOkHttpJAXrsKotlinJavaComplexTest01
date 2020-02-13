@@ -22,7 +22,7 @@ public interface InterfaceEndpointsJava {
     @GET("RclassJava/test")
     String getMessage3();
 
-    @GET("/classJava/test")
+    @GET("/classJava1/test")
     String getMessage4();
 
     @GET("/")

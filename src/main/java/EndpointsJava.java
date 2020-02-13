@@ -1,12 +1,10 @@
 import retrofit2.Call;
 
-import javax.annotation.PostConstruct;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import java.util.List;
 
-@Path("/classJava")
+@Path("/classJava1")
 public class EndpointsJava implements InterfaceEndpointsJava, InterfaceRetrofit {
 
     @retrofit2.http.GET("/retroinClass")
@@ -22,6 +20,11 @@ public class EndpointsJava implements InterfaceEndpointsJava, InterfaceRetrofit 
 
     @Override
     public Call<List<TestObject>> getAllObjects() {
+        return null;
+    }
+
+    @Override
+    public Call<List<TestObject>> groupList(int groupId, String sort) {
         return null;
     }
 
