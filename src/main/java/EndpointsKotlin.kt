@@ -3,7 +3,7 @@ import retrofit2.http.GET
 import javax.ws.rs.Path
 
 @Path("/classJava1")
-class EndpointsJava : InterfaceEndpointsJava, InterfaceRetrofit {
+abstract class EndpointsKotlin : InterfaceEndpointsJava, InterfaceRetrofit {
     @get:GET("/retroinClass")
     val retroTest: Call<List<TestObject>>?
         get() = null
@@ -14,9 +14,7 @@ class EndpointsJava : InterfaceEndpointsJava, InterfaceRetrofit {
         return "Hello"
     }
 
-    override fun getAllObjects(): Call<List<TestObject>> {
-        return null
-    }
+
 
     override fun groupList(groupId: Int, sort: String?): Call<List<TestObject?>?>? {
         return null

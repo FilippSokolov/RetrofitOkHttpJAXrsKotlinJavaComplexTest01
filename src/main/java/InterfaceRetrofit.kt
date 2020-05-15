@@ -4,8 +4,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface InterfaceRetrofit {
-    @get:GET("RclassJava")
-    val allObjects: Call<List<TestObject?>?>?
+
 
     @GET("group/{id}/users")
     fun groupList(@Path("id") groupId: Int, @Query("sort") sort: String?): Call<List<TestObject?>?>?

@@ -5,7 +5,7 @@ import java.net.MalformedURLException
 import javax.ws.rs.ApplicationPath
 
 @ApplicationPath("/")
-class ClientJava {
+class ClientKotlin {
     @Throws(MalformedURLException::class, Exception::class)
     fun callEndpoint(): List<TestObject?>? {
         val httpUrl = HttpUrl.get("https://localhost:8080/")
@@ -14,7 +14,7 @@ class ClientJava {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         val service = retrofit.create(InterfaceRetrofit::class.java)
-        val testObjects = service.allObjects
-        return testObjects!!.execute().body()
+
+        return null
     }
 }

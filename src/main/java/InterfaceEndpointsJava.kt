@@ -9,8 +9,7 @@ interface InterfaceEndpointsJava {
 
     //    @GET("classJava")
     //    String getMessage();
-    @get:retrofit2.http.GET("RclassJava")
-    val allObjects: Call<List<TestObject?>?>?
+
 
     @get:retrofit2.http.GET("RclassJava2")
     val getMessage2: String?
