@@ -1,4 +1,5 @@
 import okhttp3.HttpUrl;
+import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -13,6 +14,15 @@ public class ClientJava extends Application {
 
     public void getEndpointTest1() throws MalformedURLException {
         HttpUrl aseUrl1 = HttpUrl.get("https://localhost:8080/");
+        HttpUrl url2 = HttpUrl.parse("https://localhost:8080/");
+        HttpUrl.Builder builder = aseUrl1.newBuilder("http://localhost:8080/");
+
+
+                //not supported (segment)
+        HttpUrl baseUrl = HttpUrl.parse("https://localhost:8080/")
+                .newBuilder()
+                .addPathSegment("/helloworld")
+                .build();
 
         //############### TEST - https://youtrack.jetbrains.com/issue/IDEA-225473
 

@@ -15,6 +15,15 @@ import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 @Path(value = "/hello")
 public class Endpoints {
 
+//############ TEST - https://youtrack.jetbrains.com/issue/IDEA-232324
+
+    @GET
+    @Produces
+    public String getMessage() {
+        return "Hello World";
+    }
+    //#########
+
     @GET
     public String getMessageForm() {
         return "<form action=\"helloOlga/sayHello\" method=\"GET\">\n" +
@@ -22,6 +31,36 @@ public class Endpoints {
                 "<input type=\"submit\" />\n" +
                 "  </form>";
     }
+
+
+    @GET
+    @Path("concatVariables/{name}" + "/some" + "/{value}")
+    public String getTest1() {
+        return "Hello3";
+    }
+
+        @POST
+    @Path(value = "/valueInPath")
+    @Produces("application/json")
+    public String say12() {
+        return "{" + "\n" +
+                "\"firstName\": \"json F111\"," + "\n" +
+                "\"lastName\": \"json L111\"," + "\n" +
+                "}";
+    }
+
+        @GET
+    @Path("concat/some" + "some")
+    public String getTest13() {
+        return "Hello3";
+    }
+
+    @GET
+    @Path("regexp/{username: [a-zA-Z][a-zA-Z_0-9]}")
+    public String getTest4() {
+        return "Hello3";
+    }
+
 //
 //    @GET
 //    public String getMessageForm2() {
